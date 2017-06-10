@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<meta name="keywords" content="osu, songs, songlist, express, node">
+		<meta name="author" content="Carolina Knoll | Front-end Web Developer">
+		<meta name="description" content="Search for Osu! songs">
+
+		<!-- Project-specific page title -->
+		@html.block('title')
+
+		<link rel="icon" href="../public/img/favicon.ico">
+
+		<!-- Base styles -->
+		<link rel="stylesheet" href="../public/css/base.css" type="text/css" media="screen" charset="utf-8">
+
+		<!-- Project-specific styles -->
+		@html.block('styles')
+	</head>
+
+	<body>
+		@html.block('content')
+
+		<footer>
+			@html.block('footer', function() {
+			})
+		</footer>
+	</body>
+</html>

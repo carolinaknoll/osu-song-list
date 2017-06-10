@@ -1,0 +1,16 @@
+@html.extend("layout.vash", function() {
+	@html.block('styles', function(){
+		<link rel="stylesheet" href="../public/css/base.css" type="text/css" media="screen" charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet">
+	})
+
+	@html.block('title', function(){
+		<title>Osu! Song Search</title>
+	})
+
+  @html.block("content", function() {
+
+    <h3 class="big-text">Osu! Song Search!</h3>
+		<p class="medium-text">Search for Osu! songs.</p>
+  })
+})

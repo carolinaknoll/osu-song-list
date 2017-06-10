@@ -1,0 +1,21 @@
+{
+  "name": "osu-song-list",
+  "version": "1.0.0",
+  "description": "Search for songs that are playable in Osu! rhythm game.",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "build:css": "node-sass --output-style expanded --indent-type space --indent-width 2 -o public/css public/scss",
+    "watch:css": "onchange 'public/scss/*.scss' -- npm run build:css"
+  },
+  "author": "Carolina Knoll",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.3",
+    "node-sass": "^4.5.3",
+    "vash": "^0.12.2"
+  },
+  "devDependencies": {
+    "onchange": "^3.2.1"
+  }
+}
