@@ -1,6 +1,7 @@
 @html.extend("layout.vash", function() {
 	@html.block('styles', function(){
 		<link rel="stylesheet" href="css/base.css" type="text/css" media="screen" charset="utf-8">
+		<link rel="stylesheet" href="css/search.css" type="text/css" media="screen" charset="utf-8">
     <link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet">
 	})
 
@@ -10,7 +11,13 @@
 
   @html.block("content", function() {
 
-    <h3 class="big-text">Osu! Song Search!</h3>
-		<p class="medium-text">Search for Osu! songs.</p>
+		<div class="search-container">
+			<h3 class="big-text">Osu! Song Search!</h3>
+			<p class="medium-text">Search for Osu! songs.</p>
+			<input type="text" id="searchInput" class="search-input"/>
+		</div>
+
+		<script src="js/search.js"></script>
   })
+
 })
