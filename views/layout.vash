@@ -12,10 +12,10 @@
 		<!-- Project-specific page title -->
 		@html.block('title')
 
-		<link rel="icon" href="../public/img/favicon.ico">
+		<link rel="icon" href="img/favicon.ico">
 
 		<!-- Base styles -->
-		<link rel="stylesheet" href="../public/css/base.css" type="text/css" media="screen" charset="utf-8">
+		<link rel="stylesheet" href="css/base.css" type="text/css" media="screen" charset="utf-8">
 
 		<!-- Project-specific styles -->
 		@html.block('styles')
