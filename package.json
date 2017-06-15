@@ -8,7 +8,7 @@
     "build:css": "node-sass --output-style expanded --indent-type space --indent-width 2 -o public/css public/scss",
     "watch:css": "onchange \"public/scss/*.scss\" -- npm run build:css",
     "sync": "browser-sync start --proxy localhost:3000 --files **",
-    "everything": "run-p start sync watch:css"
+    "run-all": "run-p start sync watch:css"
   },
   "author": "Carolina Knoll",
   "license": "ISC",
