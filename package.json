@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node app.js",
     "build:css": "node-sass --output-style expanded --indent-type space --indent-width 2 -o public/css public/scss",
-    "watch:css": "onchange 'public/scss/*.scss' -- npm run build:css"
+    "watch:css": "onchange \"public/scss/*.scss\" -- npm run build:css"
   },
   "author": "Carolina Knoll",
   "license": "ISC",
