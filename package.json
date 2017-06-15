@@ -6,7 +6,9 @@
   "scripts": {
     "start": "node app.js",
     "build:css": "node-sass --output-style expanded --indent-type space --indent-width 2 -o public/css public/scss",
-    "watch:css": "onchange \"public/scss/*.scss\" -- npm run build:css"
+    "watch:css": "onchange \"public/scss/*.scss\" -- npm run build:css",
+    "sync": "browser-sync start --proxy localhost:3000 --files **",
+    "everything": "run-p start sync watch:css"
   },
   "author": "Carolina Knoll",
   "license": "ISC",
@@ -16,6 +18,8 @@
     "vash": "^0.12.2"
   },
   "devDependencies": {
+    "browser-sync": "^2.18.12",
+    "npm-run-all": "^4.0.2",
     "onchange": "^3.2.1"
   }
 }
