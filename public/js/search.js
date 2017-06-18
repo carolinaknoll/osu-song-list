@@ -1,14 +1,33 @@
-const searchInput = document.getElementById('searchInput');
-const inputResult = document.createElement('h3');
-inputResult.classList.add('input-result');
+const songList = [
+  'STEREO DIVE FOUNDATION - Renegade',
+  'Iwasaki Taku - Dance Macabre',
+  'JAM Project - THE HERO!! ~Ikareru Kobushi ni Hi o Tsukero~',
+  'Linked Horizon - Shinzou o Sasageyo!',
+  'Porno Graffitti - THE DAY'
+];
 
-function renderText() {
-  console.log(searchInput.value);
+const findMatches = (song) => {
 
-  var searchInputValue = document.createTextNode(searchInput.value);
-  inputResult.appendChild(searchInputValue);
-  document.body.appendChild(inputResult);
+  if (!$('#searchInput').val()) {
+    $('#searchResult').html('');
+  }
+
+  if ($('#searchInput').val()) {
+    for (song = 0; song < songList.length; song++) {
+      const pattern = new RegExp($('#searchInput').val());
+      const hasPattern = pattern.test(songList[song]);
+
+      if (!hasPattern) {
+        return;
+      }
+
+      $('#searchResult').html(songList[song]);
+
+    console.log('does song list contain searched pattern?', hasPattern);
+    console.log('pattern', pattern);
+    };
+  }
 }
 
-searchInput.addEventListener('keyup', renderText);
-searchInput.addEventListener('change', renderText);
+const searchInput = document.getElementById('searchInput');
+searchInput.addEventListener('keyup', findMatches);
