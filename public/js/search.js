@@ -6,26 +6,28 @@ const songList = [
   'Porno Graffitti - THE DAY'
 ];
 
-const findMatches = (song) => {
+let matchedSongs = [];
+
+ const findMatches = (song) => {
+
+  for (song = 0; song < songList.length; song++) {
+    const pattern = new RegExp($('#searchInput').val());
+    const hasPattern = pattern.test(songList[song]);
+
+    if (hasPattern && !(matchedSongs[songList[song]])) {
+      matchedSongs.push(songList[song] + '<br />');
+      $('#searchResult').html(matchedSongs);
+      console.log('matchedSongs', matchedSongs);
+    }
+
+    console.log('---');
+    console.log(`does song list contain searched pattern? ${pattern}, ${hasPattern}`);
+    console.log('---');
+  };
 
   if (!$('#searchInput').val()) {
     $('#searchResult').html('');
-  }
-
-  if ($('#searchInput').val()) {
-    for (song = 0; song < songList.length; song++) {
-      const pattern = new RegExp($('#searchInput').val());
-      const hasPattern = pattern.test(songList[song]);
-
-      if (!hasPattern) {
-        return;
-      }
-
-      $('#searchResult').html(songList[song]);
-
-    console.log('does song list contain searched pattern?', hasPattern);
-    console.log('pattern', pattern);
-    };
+    matchedSongs = [];
   }
 }
 
