@@ -11,15 +11,15 @@
 
   @html.block("content", function () {
 		<div class="search-container">
-			<h3 class="big-text">Osu! Song Search!</h3>
-			<p class="medium-text">Search for Osu! songs.</p>
+			<h2 class="normal-weight">Osu! Song Search!</h2>
+			<p>Search for Osu! songs.</p>
 
 			<input type="text" id="searchInput" class="search-input" placeholder="Search for an existing Osu! song..."/>
 
 			<div id="searchResult"></div>
 
 			<h3>Songs currently included in the song list:</h3>
-			<div id="songList"></div>
+			<div id="songList" class="song-list"></div>
 		</div>
 
 		<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
