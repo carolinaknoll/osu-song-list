@@ -31,5 +31,8 @@ let matchedSongs = [];
   }
 }
 
+let currentSongs = songList.toString().split(',').join('<br />');
+$('#songList').html(currentSongs);
+
 const searchInput = document.getElementById('searchInput');
 searchInput.addEventListener('keyup', findMatches);

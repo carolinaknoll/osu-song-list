@@ -17,6 +17,9 @@
 			<input type="text" id="searchInput" class="search-input" placeholder="Search for an existing Osu! song..."/>
 
 			<div id="searchResult"></div>
+
+			<h3>Songs currently included in the song list:</h3>
+			<div id="songList"></div>
 		</div>
 
 		<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
