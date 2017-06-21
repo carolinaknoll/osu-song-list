@@ -8,7 +8,7 @@ const songList = [
 
 let matchedSongs = [];
 
- const findMatches = (song) => {
+  const findMatches = (song) => {
 
   for (song = 0; song < songList.length; song++) {
     const pattern = new RegExp($('#searchInput').val());
@@ -31,7 +31,7 @@ let matchedSongs = [];
   }
 }
 
-let currentSongs = songList.toString().split(',').join('<br />');
+let currentSongs = songList.join('<br />');
 $('#songList').html(currentSongs);
 
 $('#searchInput').on('keyup', findMatches);
