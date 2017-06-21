@@ -10,12 +10,12 @@ let matchedSongs = [];
 
   const findMatches = (song) => {
 
-  for (song = 0; song < songList.length; song++) {
+  for (let song of songList) {
     const pattern = new RegExp($('#searchInput').val());
-    const hasPattern = pattern.test(songList[song]);
+    const hasPattern = pattern.test(song);
 
-    if (hasPattern && !(matchedSongs[songList[song]])) {
-      matchedSongs.push(songList[song] + '<br />');
+    if (hasPattern && !(matchedSongs[song])) {
+      matchedSongs.push(song + '<br />');
       $('#searchResult').html(matchedSongs);
       console.log('matchedSongs', matchedSongs);
     }
