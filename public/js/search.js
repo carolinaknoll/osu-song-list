@@ -8,30 +8,24 @@ const songList = [
 
 let matchedSongs = [];
 
-  const findMatches = (song) => {
+const findMatches = (song) => {
 
-  for (let song of songList) {
+  for (song of songList) {
     const pattern = new RegExp($('#searchInput').val());
     const hasPattern = pattern.test(song);
 
-    if (hasPattern && !(matchedSongs[song])) {
-      matchedSongs.push(song + '<br />');
-      $('#searchResult').html(matchedSongs);
-      console.log('matchedSongs', matchedSongs);
+    if (hasPattern && matchedSongs.indexOf(song) === -1) {
+      matchedSongs.push(song);
+      $('#searchResult').html(matchedSongs.join('<br />'));
     }
 
-    console.log('---');
-    console.log(`does song list contain searched pattern? ${pattern}, ${hasPattern}`);
-    console.log('---');
-  };
-
-  if (!$('#searchInput').val()) {
-    $('#searchResult').html('');
-    matchedSongs = [];
+    if (!$('#searchInput').val()) {
+      $('#searchResult').html('');
+      matchedSongs = [];
+    }
   }
-}
+};
 
-let currentSongs = songList.join('<br />');
-$('#songList').html(currentSongs);
+$('#songList').html(songList.join('<br />'));
 
 $('#searchInput').on('keyup', findMatches);
